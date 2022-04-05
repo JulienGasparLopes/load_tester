@@ -9,12 +9,12 @@ API_URL = "https://dev.pickyourskills.com/api/v1/"
 
 
 class LoadTester:
-    def __init__(self) -> None:
+    def __init__(self, debug=False) -> None:
         self._token = get_token()
         self._headers = {"authorization": f"Bearer {self._token}"}
         self._base_url = API_URL
 
-        self.debug = False
+        self.debug = debug
 
     def _print(self, message):
         if self.debug:
